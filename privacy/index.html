@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — The Tab</title>
+    <meta
+      name="description"
+      content="Privacy policy for The Tab, a Chrome extension that replaces your new tab page."
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #faf9f7;
+        --text: #1a1816;
+        --muted: #5c564f;
+        --border: #e8e4df;
+        --accent: #4f46e5;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #141210;
+          --text: #f4f1ec;
+          --muted: #a39e96;
+          --border: #2e2a26;
+          --accent: #a5b4fc;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Georgia", "Times New Roman", serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.65;
+        font-size: 1.05rem;
+      }
+      .wrap {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2.5rem 1.25rem 4rem;
+      }
+      header {
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        font-size: 1.75rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin: 0 0 0.5rem;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      .meta {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+      h2 {
+        font-size: 1.15rem;
+        font-family: system-ui, -apple-system, sans-serif;
+        margin: 2rem 0 0.75rem;
+        letter-spacing: -0.01em;
+      }
+      p,
+      li {
+        margin: 0.65rem 0;
+      }
+      ul {
+        padding-left: 1.35rem;
+      }
+      a {
+        color: var(--accent);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+      }
+      a:hover {
+        text-decoration-thickness: 2px;
+      }
+      footer {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border);
+        font-size: 0.88rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>Privacy Policy</h1>
+        <p class="meta"><strong>The Tab</strong> — Chrome extension · Effective date: May 12, 2026</p>
+      </header>
+
+      <p>
+        This policy describes how <strong>The Tab</strong> (“the extension”) handles information when you install and use
+        it. The extension replaces Chrome’s default new tab page with a personalized dashboard and optional tools
+        described below.
+      </p>
+
+      <h2>Who we are</h2>
+      <p>
+        The Tab is published by the developer identified on the item’s Chrome Web Store page. For privacy questions, use
+        the contact email or support link on that listing (the Store requires a way for users to reach you).
+      </p>
+
+      <h2>What the extension processes</h2>
+      <p>The extension may process the following categories of data on your device or through services you trigger:</p>
+      <ul>
+        <li>
+          <strong>Settings and local state</strong> — Preferences (theme, layout options, blocking lists, feature
+          toggles, cached weather responses, optional encrypted keys for local summaries) stored with Chrome’s
+          <code>chrome.storage</code> APIs.
+        </li>
+        <li>
+          <strong>Browsing history (read-only via Chrome)</strong> — With your permission, the extension uses Chrome’s
+          History API to show suggestions, insights, and shortcuts derived from pages you visited. History data is
+          processed inside the extension and is not uploaded to our servers (we do not operate a backend for this
+          product unless separately disclosed).
+        </li>
+        <li>
+          <strong>Tab activity / dwell time</strong> — Optional summaries of time spent on sites may be derived from
+          active tab URLs and titles and stored locally (including encrypted storage where implemented) for dashboard
+          analytics.
+        </li>
+        <li>
+          <strong>Location-related signals (for weather)</strong> — If you enable weather or location-based modes, the
+          extension may use coarse network-based location, browser geolocation when you allow it, or geocoding/reverse
+          geocoding services to show a label and forecast. Those requests go directly from your browser to third-party
+          endpoints required for that feature.
+        </li>
+        <li>
+          <strong>Optional Google account</strong> — If you choose to connect Google, Chrome’s Identity API may obtain
+          an OAuth token so the extension can request basic profile fields (such as name, email, and profile picture)
+          from Google’s userinfo endpoint. Profile data may be cached locally for a short period to avoid repeated
+          requests.
+        </li>
+        <li>
+          <strong>Search suggestions</strong> — When you type in the search bar, the extension may request query
+          suggestions from Google’s suggestion service over HTTPS.
+        </li>
+      </ul>
+
+      <h2>Third-party services</h2>
+      <p>
+        Network requests initiated by the extension may reach services needed for optional features, including but not
+        limited to: Google (OAuth userinfo, token revocation, query suggestions), Open‑Meteo and related geocoding
+        endpoints for weather, and IP or reverse‑geocode helpers used only to resolve approximate location or city labels
+        for weather. Those providers process requests under their own policies.
+      </p>
+
+      <h2>What we do not do</h2>
+      <ul>
+        <li>We do not sell your personal data.</li>
+        <li>We do not use your data for creditworthiness or lending.</li>
+        <li>We do not run unrelated ads or profiling beyond operating the extension’s stated features.</li>
+      </ul>
+
+      <h2>Data retention</h2>
+      <p>
+        Data stored locally follows your browser and extension storage until you clear it or uninstall the extension.
+        Cached OAuth profile data uses a short time-to-live where implemented. You can revoke Google access through your
+        Google account settings and remove cached tokens via the extension’s sign‑out flows where provided.
+      </p>
+
+      <h2>Children</h2>
+      <p>The extension is not directed at children under 13, and we do not knowingly collect personal information from them.</p>
+
+      <h2>Changes</h2>
+      <p>
+        We may update this policy when the extension changes. The effective date at the top will be revised. Continued
+        use after changes means you accept the updated policy.
+      </p>
+
+      <footer>
+        <p>
+          This page is hosted for Chrome Web Store disclosure. Extension behavior always follows the version you install
+          from the Store.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
