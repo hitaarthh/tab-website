@@ -5,13 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>The Tab — Web</title>
     <meta http-equiv="refresh" content="0; url=privacy/" />
+    <script>
+      (function () {
+        var KEY = "the-tab-web-theme";
+        function resolved() {
+          var m = localStorage.getItem(KEY) || "system";
+          if (m === "light" || m === "dark") return m;
+          return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", resolved());
+      })();
+    </script>
     <style>
+      html[data-theme="light"] {
+        color-scheme: light;
+        --bg: #faf9f7;
+        --text: #1a1816;
+        --muted: #5c564f;
+        --accent: #4f46e5;
+      }
+      html[data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #141210;
+        --text: #f4f1ec;
+        --muted: #a39e96;
+        --accent: #a5b4fc;
+      }
       body {
         font-family: system-ui, sans-serif;
         padding: 2rem;
         max-width: 40rem;
         margin: 0 auto;
         line-height: 1.5;
+        background: var(--bg);
+        color: var(--text);
+      }
+      a {
+        color: var(--accent);
       }
     </style>
   </head>
