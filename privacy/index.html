@@ -6,329 +6,508 @@
     <title>Privacy Policy — The Tab</title>
     <meta
       name="description"
-      content="Privacy policy for The Tab, a Chrome extension that replaces your new tab page."
+      content="Privacy policy for The Tab, a browser extension that replaces your new tab page. Describes the data the extension processes, where it is stored, and which third-party services it uses."
     />
-    <script>
-      (function () {
-        var KEY = "the-tab-web-theme";
-        function resolved() {
-          var m = localStorage.getItem(KEY) || "system";
-          if (m === "light" || m === "dark") return m;
-          return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        }
-        document.documentElement.setAttribute("data-theme", resolved());
-      })();
-    </script>
+    <link rel="canonical" href="https://thetab.app/privacy/" />
     <style>
-      html[data-theme="light"] {
-        color-scheme: light;
+      :root {
+        color-scheme: light dark;
         --bg: #faf9f7;
+        --surface: #ffffff;
         --text: #1a1816;
         --muted: #5c564f;
         --border: #e8e4df;
-        --accent: #4f46e5;
-        --btn-bg: #edeae6;
-        --btn-bg-hover: #e2ddd6;
-        --btn-active: #4f46e5;
-        --btn-active-fg: #fff;
+        --accent: #c4704b;
+        --accent-soft: rgba(196, 112, 75, 0.1);
+        --code-bg: #f1ede8;
       }
-      html[data-theme="dark"] {
-        color-scheme: dark;
-        --bg: #141210;
-        --text: #f4f1ec;
-        --muted: #a39e96;
-        --border: #2e2a26;
-        --accent: #a5b4fc;
-        --btn-bg: #262320;
-        --btn-bg-hover: #342f2b;
-        --btn-active: #6366f1;
-        --btn-active-fg: #0c0a09;
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #141210;
+          --surface: #1c1a17;
+          --text: #f4f1ec;
+          --muted: #a39e96;
+          --border: #2e2a26;
+          --accent: #d88563;
+          --accent-soft: rgba(216, 133, 99, 0.12);
+          --code-bg: #24211e;
+        }
       }
-      * {
-        box-sizing: border-box;
-      }
+      *, *::before, *::after { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
       body {
         margin: 0;
-        font-family: "Georgia", "Times New Roman", serif;
+        font-family: "Iowan Old Style", "Georgia", "Times New Roman", serif;
         background: var(--bg);
         color: var(--text);
         line-height: 1.65;
         font-size: 1.05rem;
       }
       .wrap {
-        max-width: 42rem;
+        max-width: 44rem;
         margin: 0 auto;
-        padding: 2.5rem 1.25rem 4rem;
+        padding: 3rem 1.25rem 5rem;
       }
       header {
         border-bottom: 1px solid var(--border);
         padding-bottom: 1.5rem;
         margin-bottom: 2rem;
       }
-      h1 {
-        font-size: 1.75rem;
+      .eyebrow {
+        font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        font-size: 0.72rem;
         font-weight: 600;
-        letter-spacing: -0.02em;
-        margin: 0 0 0.5rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 0.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        margin: 0 0 0.35rem;
         font-family: system-ui, -apple-system, sans-serif;
       }
       .meta {
-        font-size: 0.9rem;
+        font-size: 0.92rem;
         color: var(--muted);
+        margin: 0;
       }
       h2 {
-        font-size: 1.15rem;
+        font-size: 1.2rem;
         font-family: system-ui, -apple-system, sans-serif;
-        margin: 2rem 0 0.75rem;
-        letter-spacing: -0.01em;
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        margin: 2.5rem 0 0.85rem;
+        padding-top: 0.5rem;
       }
-      p,
-      li {
-        margin: 0.65rem 0;
+      h3 {
+        font-size: 1rem;
+        font-family: system-ui, -apple-system, sans-serif;
+        font-weight: 600;
+        margin: 1.5rem 0 0.4rem;
+        color: var(--text);
       }
-      ul {
-        padding-left: 1.35rem;
+      p, li { margin: 0.7rem 0; }
+      ul { padding-left: 1.4rem; }
+      li { padding-left: 0.15rem; }
+      strong { font-weight: 600; }
+      em { color: var(--muted); font-style: italic; }
+      code {
+        font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        font-size: 0.86em;
+        background: var(--code-bg);
+        padding: 0.1em 0.35em;
+        border-radius: 4px;
       }
       a {
         color: var(--accent);
         text-decoration-thickness: 1px;
         text-underline-offset: 3px;
       }
-      a:hover {
-        text-decoration-thickness: 2px;
+      a:hover { text-decoration-thickness: 2px; }
+      .callout {
+        background: var(--accent-soft);
+        border-left: 3px solid var(--accent);
+        padding: 1rem 1.15rem;
+        border-radius: 4px;
+        margin: 1.25rem 0;
+        font-size: 0.97rem;
+      }
+      .callout p { margin: 0.4rem 0; }
+      .callout p:first-child { margin-top: 0; }
+      .callout p:last-child { margin-bottom: 0; }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0 1.5rem;
+        font-size: 0.95rem;
+      }
+      th, td {
+        text-align: left;
+        padding: 0.7rem 0.5rem;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+      th {
+        font-family: system-ui, -apple-system, sans-serif;
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--muted);
+      }
+      td code { white-space: nowrap; }
+      .toc {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1rem 1.25rem;
+        margin: 1.5rem 0 2rem;
+        font-size: 0.94rem;
+      }
+      .toc h2 {
+        margin: 0 0 0.6rem;
+        padding-top: 0;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .toc ol {
+        margin: 0;
+        padding-left: 1.25rem;
+        line-height: 1.85;
+      }
+      .toc a {
+        color: var(--text);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+      }
+      .toc a:hover {
+        border-bottom-color: var(--accent);
       }
       footer {
-        margin-top: 3rem;
+        margin-top: 3.5rem;
         padding-top: 1.5rem;
         border-top: 1px solid var(--border);
         font-size: 0.88rem;
         color: var(--muted);
       }
-      .theme-bar {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        margin-bottom: 1.25rem;
-      }
-      .theme-label {
-        font-size: 0.8rem;
-        font-family: system-ui, -apple-system, sans-serif;
-        color: var(--muted);
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-      }
-      .theme-toggle {
-        display: inline-flex;
-        border-radius: 999px;
-        padding: 3px;
-        background: var(--btn-bg);
-        border: 1px solid var(--border);
-      }
-      .theme-toggle button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.35rem;
-        border: none;
-        background: transparent;
-        color: var(--muted);
-        font: inherit;
-        font-size: 0.8rem;
-        font-family: system-ui, -apple-system, sans-serif;
-        padding: 0.45rem 0.75rem;
-        border-radius: 999px;
-        cursor: pointer;
-        transition: background 0.15s, color 0.15s;
-      }
-      .theme-toggle button:hover {
-        background: var(--btn-bg-hover);
-        color: var(--text);
-      }
-      .theme-toggle button[aria-pressed="true"] {
-        background: var(--btn-active);
-        color: var(--btn-active-fg);
-      }
-      .theme-toggle button svg {
-        width: 1rem;
-        height: 1rem;
-        flex-shrink: 0;
-      }
-      code {
-        font-size: 0.92em;
-        padding: 0.12em 0.35em;
-        border-radius: 4px;
-        background: var(--btn-bg);
-      }
+      footer p { margin: 0.4rem 0; }
     </style>
   </head>
   <body>
     <div class="wrap">
       <header>
-        <div class="theme-bar">
-          <span class="theme-label" id="theme-label">Appearance</span>
-          <div class="theme-toggle" role="group" aria-label="Theme">
-            <button type="button" id="theme-system" aria-pressed="false" title="Match system">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <rect x="2" y="3" width="20" height="14" rx="2" />
-                <path d="M8 21h8M12 17v4" />
-              </svg>
-              Auto
-            </button>
-            <button type="button" id="theme-light" aria-pressed="false" title="Light theme">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <circle cx="12" cy="12" r="4" />
-                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-              </svg>
-              Light
-            </button>
-            <button type="button" id="theme-dark" aria-pressed="false" title="Dark theme">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-              </svg>
-              Dark
-            </button>
-          </div>
-        </div>
-        <h1>Privacy Policy</h1>
-        <p class="meta"><strong>The Tab</strong> — Chrome extension · Effective date: May 12, 2026</p>
+        <p class="eyebrow">Privacy Policy</p>
+        <h1>How The Tab handles your data</h1>
+        <p class="meta">
+          <strong>The Tab</strong> · Browser extension for Chrome and Firefox · Effective May 12, 2026
+        </p>
       </header>
 
       <p>
-        This policy describes how <strong>The Tab</strong> (“the extension”) handles information when you install and use
-        it. The extension replaces Chrome’s default new tab page with a personalized dashboard and optional tools
-        described below.
+        This document explains what data <strong>The Tab</strong> (the “extension”) processes, where that data is
+        stored, and which third-party services your browser may contact while you use the extension. It is written so a
+        non-lawyer can read it once and understand exactly what happens.
       </p>
 
-      <h2>Who we are</h2>
+      <div class="callout">
+        <p>
+          <strong>Plain-English summary.</strong> The Tab has no servers of its own. Everything you do with the extension
+          — your settings, your blocked sites, your time-on-site history, your cached Google profile — stays inside your
+          browser on your device. Network requests only happen when a feature you triggered needs them (weather lookup,
+          search suggestions, Google sign-in, etc.), and each of those goes directly from your browser to the third
+          party listed below. We do not sell or share your data, because we never receive it.
+        </p>
+      </div>
+
+      <nav class="toc" aria-label="Table of contents">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#who">Who publishes The Tab</a></li>
+          <li><a href="#data">Data the extension processes</a></li>
+          <li><a href="#google-account">Google account sign-in (optional)</a></li>
+          <li><a href="#third-parties">Third-party services your browser may contact</a></li>
+          <li><a href="#do-not">What The Tab does not do</a></li>
+          <li><a href="#retention">Data retention and deletion</a></li>
+          <li><a href="#rights">Your rights and choices</a></li>
+          <li><a href="#limited-use">Google API limited-use disclosure</a></li>
+          <li><a href="#children">Children</a></li>
+          <li><a href="#changes">Changes to this policy</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="who">1. Who publishes The Tab</h2>
       <p>
-        The Tab is published by the developer identified on the item’s Chrome Web Store page. For privacy questions, use
-        the contact email or support link on that listing (the Store requires a way for users to reach you).
+        The Tab is an independent project published by Hitarth Rohra. You can reach the publisher at
+        <a href="mailto:hitarth.rohra02@gmail.com">hitarth.rohra02@gmail.com</a>. The same email is listed as the
+        developer contact on the Chrome Web Store and Firefox Add-ons listings.
       </p>
 
-      <h2>What the extension processes</h2>
-      <p>The extension may process the following categories of data on your device or through services you trigger:</p>
+      <h2 id="data">2. Data the extension processes</h2>
+      <p>
+        The extension handles a small number of distinct data categories. Unless explicitly noted, everything below is
+        processed locally inside your browser via Chrome / WebExtension APIs (<code>chrome.storage.local</code>,
+        <code>chrome.history</code>, <code>chrome.tabs</code>, etc.) and is never transmitted to us or to any external
+        server.
+      </p>
+
+      <h3>2.1 Settings and preferences</h3>
+      <p>
+        Your theme, blocked-sites list, YouTube clean-mode toggle, clock format, weather unit, custom display name, and
+        similar preferences are stored in <code>chrome.storage.local</code>. They live alongside the extension on your
+        device and travel with your Chrome profile if you have Chrome Sync enabled (Chrome handles that sync, not us).
+      </p>
+
+      <h3>2.2 Browsing history (read-only)</h3>
+      <p>
+        With the <code>history</code> permission you granted at install time, the extension reads from Chrome’s history
+        database to power two features:
+      </p>
+      <ul>
+        <li>The search dropdown ranks recently visited URLs and the open tabs that match what you’re typing.</li>
+        <li>The activity heatmap aggregates how long you spent on each site, locally.</li>
+      </ul>
+      <p>
+        Reads happen on the new-tab page or in the extension’s background worker. <strong>History data is never
+        transmitted off your device.</strong>
+      </p>
+
+      <h3>2.3 Open tabs (read-only)</h3>
+      <p>
+        With the <code>tabs</code> permission, the extension queries the list of currently open tabs so it can offer
+        “Switch to tab” suggestions in the search dropdown. The tab list is read in-memory and is never written to
+        storage or sent over the network.
+      </p>
+
+      <h3>2.4 Time-on-site (dwell-time analytics)</h3>
+      <p>
+        The extension observes navigation events (<code>chrome.webNavigation</code>) and idle state
+        (<code>chrome.idle</code>) to estimate how long the active tab was actually in use. Per-domain totals are
+        aggregated by day and stored locally. Where implemented, individual time entries are encrypted at rest with a
+        key stored in <code>chrome.storage.session</code> using the Web Crypto API.
+      </p>
+
+      <h3>2.5 Site-blocking</h3>
+      <p>
+        When you visit a domain on your blocked list during a focus session, the extension redirects the tab to its
+        internal <em>Not now</em> page. The check happens locally in <code>chrome.webNavigation.onBeforeNavigate</code>.
+        The URL of the blocked attempt is shown on that page so you know what triggered the block; it is not logged
+        anywhere else.
+      </p>
+
+      <h3>2.6 Weather (optional feature)</h3>
+      <p>
+        If you keep the weather card enabled, your browser makes the network requests described in
+        <a href="#third-parties">section 4</a>. The location used depends on the mode you pick in settings:
+      </p>
       <ul>
         <li>
-          <strong>Settings and local state</strong> — Preferences (theme, layout options, blocking lists, feature
-          toggles, cached weather responses, optional encrypted keys for local summaries) stored with Chrome’s
-          <code>chrome.storage</code> APIs.
+          <strong>IP-based</strong> (default): your browser’s public IP is sent to a third-party IP-geolocation provider
+          which returns an approximate city. Your IP never reaches us.
         </li>
         <li>
-          <strong>Browsing history (read-only via Chrome)</strong> — With your permission, the extension uses Chrome’s
-          History API to show suggestions, insights, and shortcuts derived from pages you visited. History data is
-          processed inside the extension and is not uploaded to our servers (we do not operate a backend for this
-          product unless separately disclosed).
+          <strong>Browser geolocation</strong>: requires your one-time consent through Chrome’s native location prompt.
+          Coordinates are passed to Open-Meteo for the forecast and to BigDataCloud for a coarse reverse-geocode label.
         </li>
         <li>
-          <strong>Tab activity / dwell time</strong> — Optional summaries of time spent on sites may be derived from
-          active tab URLs and titles and stored locally (including encrypted storage where implemented) for dashboard
-          analytics.
+          <strong>Manual</strong>: the city or postal code you typed is sent to Open-Meteo’s geocoding API and then to
+          the forecast endpoint.
+        </li>
+      </ul>
+      <p>
+        Weather responses are cached in <code>chrome.storage.local</code> for a short period to avoid hammering the
+        upstream service.
+      </p>
+
+      <h3>2.7 Search suggestions</h3>
+      <p>
+        As you type in the search bar, your query is sent over HTTPS to Google’s public suggestion service
+        (<code>suggestqueries.google.com</code>) to retrieve autocomplete options. This is the same endpoint Chrome
+        itself uses; we add no telemetry on top.
+      </p>
+
+      <h3>2.8 Google Lens / image search (when used)</h3>
+      <p>
+        If you drop or upload an image into the Lens dialog, the image is posted directly to Google’s
+        <code>searchbyimage</code> endpoint. If you paste an image URL, the URL is sent to Google Lens via the
+        <code>lens.google.com/uploadbyurl</code> endpoint. The extension does not see or retain the image.
+      </p>
+
+      <h3>2.9 YouTube clean mode (content script)</h3>
+      <p>
+        When enabled, a content script runs on <code>*.youtube.com</code> pages and hides DOM elements such as the
+        recommendation rail, comments, and end-screen overlays. The script does not read your viewing history, does
+        not contact any network endpoint, and does not transmit anything off the page.
+      </p>
+
+      <h2 id="google-account">3. Google account sign-in (optional)</h2>
+      <p>
+        If — and only if — you tap <em>Continue with Google</em> during onboarding or on the navbar avatar, the
+        extension uses Chrome’s <code>identity</code> API to request an OAuth 2.0 access token. With your consent the
+        extension then fetches a small profile from Google’s OAuth userinfo endpoint
+        (<code>oauth2.googleapis.com/userinfo</code>).
+      </p>
+      <p>The scopes requested are the basic, non-sensitive ones:</p>
+      <ul>
+        <li><code>https://www.googleapis.com/auth/userinfo.profile</code> — your name and profile picture URL.</li>
+        <li><code>https://www.googleapis.com/auth/userinfo.email</code> — your primary email.</li>
+      </ul>
+      <p>
+        The profile returned is cached in <code>chrome.storage.local</code> for up to 24 hours so the avatar and
+        greeting load instantly on new tabs. When you sign out (the <em>Change</em> button in onboarding, or any future
+        sign-out control), the extension calls Google’s revocation endpoint
+        (<code>oauth2.googleapis.com/revoke</code>) and removes both the cached token and the cached profile from your
+        browser.
+      </p>
+
+      <h2 id="third-parties">4. Third-party services your browser may contact</h2>
+      <p>
+        The extension does not relay your data through any server we operate. Instead, your browser talks directly to
+        the following providers when the corresponding feature runs. Each provider has its own privacy policy linked
+        below.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Used for</th>
+            <th>Triggered when</th>
+            <th>Policy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google OAuth + Userinfo</td>
+            <td>Name, email, profile picture</td>
+            <td>You sign in with Google</td>
+            <td><a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google</a></td>
+          </tr>
+          <tr>
+            <td>Google Suggest</td>
+            <td>Search autocomplete</td>
+            <td>You type in the search bar</td>
+            <td><a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google</a></td>
+          </tr>
+          <tr>
+            <td>Google Lens / Image Search</td>
+            <td>Reverse image search</td>
+            <td>You upload an image or paste an image URL</td>
+            <td><a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google</a></td>
+          </tr>
+          <tr>
+            <td>Google Favicon service (<code>s2/favicons</code>)</td>
+            <td>App icons in the Google apps grid</td>
+            <td>You open the apps menu</td>
+            <td><a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google</a></td>
+          </tr>
+          <tr>
+            <td>Google Fonts (<code>fonts.googleapis.com</code>, <code>fonts.gstatic.com</code>)</td>
+            <td>Web fonts used in the UI</td>
+            <td>The new tab, settings, or popup page loads</td>
+            <td><a href="https://developers.google.com/fonts/faq/privacy" rel="noopener" target="_blank">Google Fonts</a></td>
+          </tr>
+          <tr>
+            <td>Open-Meteo</td>
+            <td>Weather forecast and geocoding</td>
+            <td>Weather card is enabled</td>
+            <td><a href="https://open-meteo.com/en/terms" rel="noopener" target="_blank">Open-Meteo</a></td>
+          </tr>
+          <tr>
+            <td>GeoJS (<code>get.geojs.io</code>)</td>
+            <td>Approximate location from IP</td>
+            <td>Weather mode is set to “IP”</td>
+            <td><a href="https://www.geojs.io/" rel="noopener" target="_blank">GeoJS</a></td>
+          </tr>
+          <tr>
+            <td>ipwho.is</td>
+            <td>Fallback IP geolocation if GeoJS fails</td>
+            <td>Weather mode is set to “IP”</td>
+            <td><a href="https://ipwhois.io/privacy" rel="noopener" target="_blank">ipwho.is</a></td>
+          </tr>
+          <tr>
+            <td>BigDataCloud</td>
+            <td>Reverse-geocoding browser GPS to a city label</td>
+            <td>Weather mode is set to “Geolocation”</td>
+            <td><a href="https://www.bigdatacloud.com/privacy-policy" rel="noopener" target="_blank">BigDataCloud</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="do-not">5. What The Tab does not do</h2>
+      <ul>
+        <li>We do not sell, rent, or trade your data. (We never receive it in the first place.)</li>
+        <li>We do not operate analytics, telemetry, or crash-reporting servers. There is no tracking pixel anywhere in the extension.</li>
+        <li>We do not show ads, build advertising profiles, or share data with ad networks.</li>
+        <li>We do not access page content on sites other than YouTube — and on YouTube the content script only hides existing DOM elements; it does not read your viewing history.</li>
+        <li>We do not access your passwords, bookmarks, downloads, clipboard, microphone, camera, or cookies.</li>
+      </ul>
+
+      <h2 id="retention">6. Data retention and deletion</h2>
+      <p>
+        All extension data lives in your browser’s extension storage. It persists until one of the following clears it:
+      </p>
+      <ul>
+        <li>You uninstall the extension — Chrome and Firefox remove all extension storage automatically.</li>
+        <li>You clear browsing data with the “Cookies and other site data” or “Hosted app data” option selected.</li>
+        <li>You manually clear it from the extension’s settings page or via DevTools.</li>
+      </ul>
+      <p>
+        Cached Google profile data has an additional in-product time-to-live of 24 hours and is refreshed silently from
+        Google on the next new-tab load while a valid token exists.
+      </p>
+
+      <h2 id="rights">7. Your rights and choices</h2>
+      <ul>
+        <li>
+          <strong>Revoke Google access</strong> at any time at
+          <a href="https://myaccount.google.com/connections" rel="noopener" target="_blank">myaccount.google.com/connections</a>,
+          or via the <em>Change</em> / sign-out controls inside the extension which call Google’s revocation endpoint
+          and clear the local cache.
         </li>
         <li>
-          <strong>Location-related signals (for weather)</strong> — If you enable weather or location-based modes, the
-          extension may use coarse network-based location, browser geolocation when you allow it, or geocoding/reverse
-          geocoding services to show a label and forecast. Those requests go directly from your browser to third-party
-          endpoints required for that feature.
+          <strong>Disable individual features</strong> from the extension’s settings page — turn off weather, history
+          suggestions, dwell-time tracking, or YouTube clean mode independently.
         </li>
         <li>
-          <strong>Optional Google account</strong> — If you choose to connect Google, Chrome’s Identity API may obtain
-          an OAuth token so the extension can request basic profile fields (such as name, email, and profile picture)
-          from Google’s userinfo endpoint. Profile data may be cached locally for a short period to avoid repeated
-          requests.
+          <strong>Delete all extension data</strong> by uninstalling the extension or by clearing extension data from
+          <code>chrome://extensions</code> (Chrome) or <code>about:addons</code> (Firefox).
         </li>
         <li>
-          <strong>Search suggestions</strong> — When you type in the search bar, the extension may request query
-          suggestions from Google’s suggestion service over HTTPS.
+          <strong>Object, access, or correct</strong> personal data we hold about you — there is no personal data on our
+          side because the extension has no server. To exercise the equivalent right against Google’s copy of your
+          profile, use the controls in your Google account.
+        </li>
+        <li>
+          If you are in the EEA, UK, California, or another region with a specific data-protection law, the equivalent
+          rights apply. We will respond to verifiable requests sent to the contact email below within 30 days.
         </li>
       </ul>
 
-      <h2>Third-party services</h2>
+      <h2 id="limited-use">8. Google API limited-use disclosure</h2>
       <p>
-        Network requests initiated by the extension may reach services needed for optional features, including but not
-        limited to: Google (OAuth userinfo, token revocation, query suggestions), Open‑Meteo and related geocoding
-        endpoints for weather, and IP or reverse‑geocode helpers used only to resolve approximate location or city labels
-        for weather. Those providers process requests under their own policies.
+        The Tab’s use of information received from Google APIs adheres to the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy#limited_use" rel="noopener" target="_blank">Google
+        API Services User Data Policy</a>, including the Limited Use requirements. Specifically: the profile data we
+        retrieve from Google (name, email, profile picture) is used only to display your identity inside the extension
+        UI on your own device. We do not transfer it to third parties, do not use it for advertising, and do not allow
+        humans to read it.
       </p>
 
-      <h2>What we do not do</h2>
-      <ul>
-        <li>We do not sell your personal data.</li>
-        <li>We do not use your data for creditworthiness or lending.</li>
-        <li>We do not run unrelated ads or profiling beyond operating the extension’s stated features.</li>
-      </ul>
-
-      <h2>Data retention</h2>
+      <h2 id="children">9. Children</h2>
       <p>
-        Data stored locally follows your browser and extension storage until you clear it or uninstall the extension.
-        Cached OAuth profile data uses a short time-to-live where implemented. You can revoke Google access through your
-        Google account settings and remove cached tokens via the extension’s sign‑out flows where provided.
+        The extension is a general-audience productivity tool and is not directed at children under 13. We do not
+        knowingly collect personal information from children. If you believe a child has somehow caused data of theirs
+        to be processed by the extension on your device, uninstalling the extension removes it entirely.
       </p>
 
-      <h2>Children</h2>
-      <p>The extension is not directed at children under 13, and we do not knowingly collect personal information from them.</p>
-
-      <h2>Changes</h2>
+      <h2 id="changes">10. Changes to this policy</h2>
       <p>
-        We may update this policy when the extension changes. The effective date at the top will be revised. Continued
-        use after changes means you accept the updated policy.
+        We will update this page when the extension’s data handling changes — for example, when a new third-party
+        service is added or removed. The effective date at the top of the page is revised whenever the policy
+        meaningfully changes. We encourage you to re-read it after major extension updates.
+      </p>
+
+      <h2 id="contact">11. Contact</h2>
+      <p>
+        Questions, deletion requests, or anything else: email
+        <a href="mailto:hitarth.rohra02@gmail.com">hitarth.rohra02@gmail.com</a>. We aim to reply within a few business
+        days.
       </p>
 
       <footer>
         <p>
-          This page is hosted for Chrome Web Store disclosure. Extension behavior always follows the version you install
-          from the Store.
+          This page is the canonical privacy disclosure for the version of The Tab listed on the Chrome Web Store and
+          Firefox Add-ons. If you find a discrepancy between this document and the extension’s actual behavior, please
+          report it at the contact email above and we will fix one or the other.
         </p>
+        <p>© 2026 Hitarth Rohra · The Tab. All rights reserved.</p>
       </footer>
     </div>
-    <script>
-      (function () {
-        var KEY = "the-tab-web-theme";
-        var btnSystem = document.getElementById("theme-system");
-        var btnLight = document.getElementById("theme-light");
-        var btnDark = document.getElementById("theme-dark");
-
-        function storedMode() {
-          return localStorage.getItem(KEY) || "system";
-        }
-
-        function resolvedTheme() {
-          var m = storedMode();
-          if (m === "light" || m === "dark") return m;
-          return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        }
-
-        function applyDom() {
-          document.documentElement.setAttribute("data-theme", resolvedTheme());
-          var mode = storedMode();
-          btnSystem.setAttribute("aria-pressed", mode === "system" ? "true" : "false");
-          btnLight.setAttribute("aria-pressed", mode === "light" ? "true" : "false");
-          btnDark.setAttribute("aria-pressed", mode === "dark" ? "true" : "false");
-        }
-
-        function setMode(mode) {
-          if (mode === "system") localStorage.removeItem(KEY);
-          else localStorage.setItem(KEY, mode);
-          applyDom();
-        }
-
-        btnSystem.addEventListener("click", function () {
-          setMode("system");
-        });
-        btnLight.addEventListener("click", function () {
-          setMode("light");
-        });
-        btnDark.addEventListener("click", function () {
-          setMode("dark");
-        });
-
-        applyDom();
-
-        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
-          if (storedMode() === "system") applyDom();
-        });
-      })();
-    </script>
   </body>
 </html>
