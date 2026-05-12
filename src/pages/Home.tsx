@@ -61,6 +61,15 @@ export default function Home() {
   return (
     <>
       <section className="hero container">
+        <img
+          className="hero__logo"
+          src="/icons/icon-256.png"
+          srcSet="/icons/icon-128.png 1x, /icons/icon-256.png 2x, /icons/icon-512.png 3x"
+          alt="The Tab logo"
+          width={96}
+          height={96}
+          decoding="async"
+        />
         <p className="eyebrow">Browser extension · Chrome &amp; Firefox</p>
         <h1>The only new tab you'll ever need.</h1>
         <p className="lead">

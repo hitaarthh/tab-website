@@ -16,10 +16,14 @@
     <script>
       (function () {
         var KEY = "the-tab-web-theme";
+        function byTime() {
+          var h = new Date().getHours();
+          return h >= 6 && h < 18 ? "light" : "dark";
+        }
         function resolved() {
           var saved = localStorage.getItem(KEY);
           if (saved === "light" || saved === "dark") return saved;
-          return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          return byTime();
         }
         document.documentElement.setAttribute("data-theme", resolved());
       })();
