@@ -5,7 +5,7 @@ export default function Terms() {
         <p className="eyebrow">Terms of Service</p>
         <h1>Terms for using The Tab</h1>
         <p className="meta">
-          <strong>The Tab</strong> · Browser extension for Chrome and Firefox · Effective May 12, 2026
+          <strong>The Tab</strong> · Browser extension for Chrome (Firefox listing coming soon) · Effective May 12, 2026
         </p>
       </header>
 

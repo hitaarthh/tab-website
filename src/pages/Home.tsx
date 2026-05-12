@@ -70,7 +70,7 @@ export default function Home() {
           height={96}
           decoding="async"
         />
-        <p className="eyebrow">Browser extension · Chrome &amp; Firefox</p>
+        <p className="eyebrow">Browser extension · Chrome · Firefox coming soon</p>
         <h1>The only new tab you'll ever need.</h1>
         <p className="lead">
           A calm, fast, private replacement for your browser's new tab page. Search, weather, calendar, tasks,
@@ -79,20 +79,19 @@ export default function Home() {
         <div className="hero__ctas">
           <a
             className="btn btn--primary"
-            href="https://chromewebstore.google.com/"
+            href="https://chromewebstore.google.com/detail/the-tab/bbpekpgphkhddkkedkfmedoeodckkpmi"
             target="_blank"
             rel="noopener noreferrer"
           >
             Add to Chrome
           </a>
-          <a
-            className="btn"
-            href="https://addons.mozilla.org/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <span
+            className="btn btn--disabled"
+            aria-disabled="true"
+            title="Coming soon"
           >
-            Add to Firefox
-          </a>
+            Firefox · coming soon
+          </span>
           <Link className="btn" to="/privacy">
             How privacy works
           </Link>

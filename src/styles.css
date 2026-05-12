@@ -347,6 +347,16 @@ button {
   border-color: var(--accent-strong);
   color: var(--bg);
 }
+.btn--disabled {
+  color: var(--muted);
+  background: var(--surface);
+  border-style: dashed;
+  cursor: not-allowed;
+  user-select: none;
+}
+.btn--disabled:hover {
+  background: var(--surface);
+}
 
 .section {
   padding: 3rem 0;

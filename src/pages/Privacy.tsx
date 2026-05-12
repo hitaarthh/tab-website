@@ -5,7 +5,7 @@ export default function Privacy() {
         <p className="eyebrow">Privacy Policy</p>
         <h1>How The Tab handles your data</h1>
         <p className="meta">
-          <strong>The Tab</strong> · Browser extension for Chrome and Firefox · Effective May 12, 2026
+          <strong>The Tab</strong> · Browser extension for Chrome (Firefox listing coming soon) · Effective May 12, 2026
         </p>
       </header>
 
@@ -47,7 +47,7 @@ export default function Privacy() {
       <p>
         The Tab is an independent project published by Hitarth Rohra. You can reach the publisher at{" "}
         <a href="mailto:hitarth.rohra@gmail.com">hitarth.rohra@gmail.com</a>. The same email is listed as the developer
-        contact on the Chrome Web Store and Firefox Add-ons listings.
+        contact on the Chrome Web Store listing (a Firefox Add-ons listing is planned but not yet published).
       </p>
 
       <h2 id="data">2. Data the extension processes</h2>
@@ -384,9 +384,9 @@ export default function Privacy() {
 
       <footer className="doc__footer">
         <p>
-          This page is the canonical privacy disclosure for the version of The Tab listed on the Chrome Web Store and
-          Firefox Add-ons. If you find a discrepancy between this document and the extension's actual behavior, please
-          report it at the contact email above and we will fix one or the other.
+          This page is the canonical privacy disclosure for the version of The Tab listed on the Chrome Web Store
+          (and, once published, the Firefox Add-ons listing). If you find a discrepancy between this document and the
+          extension's actual behavior, please report it at the contact email above and we will fix one or the other.
         </p>
         <p>© {new Date().getFullYear()} Hitarth Rohra · The Tab. All rights reserved.</p>
       </footer>
