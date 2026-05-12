@@ -12,7 +12,15 @@ export default function Layout({ children }: Props) {
       <header className="site-header">
         <div className="site-header__inner">
           <Link to="/" className="brand" aria-label="The Tab — Home">
-            <span className="brand__mark" aria-hidden="true">T</span>
+            <img
+              className="brand__logo"
+              src="/icons/icon-64.png"
+              srcSet="/icons/icon-64.png 1x, /icons/icon-128.png 2x, /icons/icon-256.png 3x"
+              alt=""
+              width={32}
+              height={32}
+              decoding="async"
+            />
             <span className="brand__name">The Tab</span>
           </Link>
           <nav className="nav" aria-label="Primary">

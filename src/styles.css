@@ -166,17 +166,12 @@ button {
   font-weight: 600;
   letter-spacing: -0.01em;
 }
-.brand__mark {
-  width: 28px;
-  height: 28px;
+.brand__logo {
+  width: 32px;
+  height: 32px;
+  display: block;
   border-radius: 8px;
-  background: var(--accent);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--bg);
-  font-size: 0.85rem;
-  font-weight: 700;
+  image-rendering: -webkit-optimize-contrast;
 }
 .brand__name {
   font-size: 1rem;
@@ -288,6 +283,14 @@ button {
 .hero {
   padding: 5rem 0 4rem;
   text-align: center;
+}
+.hero__logo {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1.25rem;
+  display: block;
+  border-radius: 22px;
+  filter: drop-shadow(0 12px 28px rgba(196, 112, 75, 0.22));
 }
 .hero h1 {
   font-size: clamp(2.2rem, 5vw, 3.4rem);
